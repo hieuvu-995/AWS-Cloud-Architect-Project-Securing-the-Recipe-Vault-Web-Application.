@@ -1,0 +1,7 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+The policy assigned to InstanceRolePolicy-C3 grants unrestricted access to all S3 resources, enabling the holder to access the secret recipes S3 bucket without requiring authorization.
+
+# Poor practice 2
+The security group WebAppSG allows incoming traffic from the internet to port 22, making the server vulnerable to attacks. Additionally, it permits outgoing traffic to any IP address.

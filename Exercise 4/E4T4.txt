@@ -1,0 +1,16 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+Utilize AWS Shield to protect against DDoS attacks.
+Implement WAF (Web Application Firewall) to filter out malicious traffic.
+Transfer the web app instance to a private subnet.
+Set up HTTPS configuration for the load balancer.
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+
+By creating VPC private endpoints for the S3 secret bucket, access is limited to authenticated users only. This means that even though an authenticated user can access the secret bucket, an admin who is not authenticated will not have access to it.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No, it just applies newly uploaded objects, not to existing ones.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+Any manual changes made will be overwritten by the modifications made to the original CloudFormation templates.

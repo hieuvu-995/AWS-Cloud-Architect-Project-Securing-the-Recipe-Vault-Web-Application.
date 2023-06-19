@@ -1,0 +1,9 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+- The EC2 instance is assigned a public IPv4 address => Instead of relying on a public IPv4 address, remove the public IPv4 and use the instance ARN to add the EC2 instance to the target group of the load balancer.
+- S3 Block Public Access setting is currently not enabled at the bucket-level => enable the 'Block Public Access' setting on the corresponding S3 buckets.
+- Application Load Balancer is not configured to edirect all HTTP requests to HTTPS => configure Application Load Balancer to redirect all HTTP requests to HTTPS.
+- CloudTrail Trail is not specified => Create a CloudTrail that is stored on S3.
+- Security groups allows unrestricted access to ports with high risk => restrict access to specific ports, such as port 22 for the EC2 instance.
